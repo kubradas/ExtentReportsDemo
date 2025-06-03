@@ -15,46 +15,48 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportDemo {
 
-   ExtentReports extent;
+	ExtentReports extent;
 
-    @BeforeTest
-    public void Config() {
-        String reportDir = System.getProperty("user.dir") + File.separator + "reports";
-        new File(reportDir).mkdirs();
+	@BeforeTest
+	public void Config() {
 
-        String path = reportDir + File.separator + "index.html";
-        ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-        reporter.config().setReportName("Web Automation Results");
-        reporter.config().setDocumentTitle("Test Results");
+		String reportDir = System.getProperty("user.dir") + File.separator + "reports";
+		new File(reportDir).mkdirs();
 
-        extent = new ExtentReports();
-        extent.attachReporter(reporter);
-        extent.setSystemInfo("Tester", "Kubra D.");
-    }
+		String path = reportDir + File.separator + "index.html";
+		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+		reporter.config().setReportName("Web Automation Results");
+		reporter.config().setDocumentTitle("Test Results");
 
-    @Test
-    public void initialDemo() {
-        ExtentTest test = extent.createTest("Initial Demo");
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("Tester", "Kubra D.");
+	}
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+	@Test
+	public void initialDemo() {
 
-        try {
-            driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-            String title = driver.getTitle();
-            System.out.println(title);
+		ExtentTest test = extent.createTest("Initial Demo");
 
-            test.pass("Navigated to " + title);
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
 
-        } catch (Exception e) {
-            test.fail("Test failed: " + e.getMessage());
-        } finally {
-            driver.quit();
-        }
-    }
+		try {
+			driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+			String title = driver.getTitle();
+			System.out.println(title);
 
-    @AfterTest
-    public void tearDown() {
-        extent.flush();
-    }
+			test.pass("Navigated to " + title);
+
+		} catch (Exception e) {
+			test.fail("Test failed: " + e.getMessage());
+		} finally {
+			driver.quit();
+		}
+	}
+
+	@AfterTest
+	public void tearDown() {
+		extent.flush();
+	}
 }
