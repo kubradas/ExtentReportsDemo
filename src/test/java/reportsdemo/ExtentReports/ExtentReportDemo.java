@@ -15,7 +15,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportDemo {
 
-    ExtentReports extent;
+   ExtentReports extent;
 
     @BeforeTest
     public void Config() {
