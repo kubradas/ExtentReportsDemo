@@ -1,4 +1,4 @@
-# 🧪 ExtentReports + Selenium + TestNG (English)
+# 🧪 ExtentReports + Selenium + TestNG (EN)
 
 [![Build with Maven](https://img.shields.io/badge/build-Maven-5C2D91?logo=apachemaven)](https://maven.apache.org/)
 [![Test Framework](https://img.shields.io/badge/TestNG-7.11.0-brightgreen?logo=testng)](https://testng.org/)
@@ -81,7 +81,7 @@ Software QA Engineer
 
 ---
 
-# 🧪 ExtentReports + Selenium + TestNG (Türkçe)
+# 🧪 ExtentReports + Selenium + TestNG (TR)
 
 [![Build with Maven](https://img.shields.io/badge/build-Maven-5C2D91?logo=apachemaven)](https://maven.apache.org/)
 [![Test Framework](https://img.shields.io/badge/TestNG-7.11.0-brightgreen?logo=testng)](https://testng.org/)
